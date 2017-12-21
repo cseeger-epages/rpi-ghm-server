@@ -31,11 +31,14 @@ curls
 
 ```
 # switch tv on 
-curl -k -H "Authorization: Basic $(echo '<username>:<password> | base64')" https://<serverip>:<port>/hdmi-on
+curl -k -H "Authorization: Basic $(echo '<username>:<password>' | base64)" https://<serverip>:<port>/hdmi-on
 # switch tv off
-curl -k -H "Authorization: Basic $(echo '<username>:<password> | base64')" https://<serverip>:<port>/hdmi-off
-
+curl -k -H "Authorization: Basic $(echo '<username>:<password>' | base64)" https://<serverip>:<port>/hdmi-off
 ```
+
+## security 
+
+These URL's can be used by [IFTTT](https://ifttt.com/google_assistant). Be carefull here you need to expose your API to the outside world so use some authentication and ip whitelisting and maybe some [Port knocking](https://wiki.archlinux.org/index.php/Port_knocking)
 
 ## build and run
 for standard linux distributions 
